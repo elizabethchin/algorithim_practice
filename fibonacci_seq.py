@@ -5,7 +5,7 @@
 #eg find the fibonacci number at a particular index of the sequence
 
 def fibonacci(n):
-    if n == 0 or n ==1:
+    if n == 0 or n == 1:
         return n
     
     else:
@@ -36,4 +36,3 @@ def fibonacci_tabulation(n):
     for i in range(2, n + 1):
         f[i] = f[i -1] + f[i -2]
     return f[n]
-    

@@ -26,3 +26,8 @@
 
 # O(2^n) time bc making 2 recursive calls in the same function
 # O(n) space bc recursion stack
+
+#use memoization to store subsequences
+class Solution:
+    def longestPalindromeSubseq(self, s: str) -> int:
+        memo =[[-1 for _ n in range(len(s))] for _ in range(len(s))]

@@ -25,13 +25,33 @@ Guaranteed constraints:
 
 The element in a that occurs in the array more than once and has the minimal index for its second occurrence. If there are no such elements, return -1.
 """
-def firstDuplicate(a):
+# def firstDuplicate(a):
 
-    seen = set()
+#     seen = set()
     
-    for num in a:
-        if num in seen:
-            return num
+#     for num in a:
+#         if num in seen:
+#             return num
+#         else:
+#             seen.add(num)
+#     return -1
+
+#O(n) time and space
+
+
+def firstDuplicate(a):
+    for i in range(len(a)):
+        if (a[abs(a[i]) - 1] < 0):
+            return abs(a[i])
         else:
-            seen.add(num)
+            a[abs(a[i]) - 1] = -a[abs(a[i]) -1]
+    return -1
+
+#O(n) time and no space
+
+def firstDuplicate(a):
+    for i in a:
+        a[abs(i)-1] *= -1
+        if a[abs(i)-1] > 0:
+            return abs(i)
     return -1
